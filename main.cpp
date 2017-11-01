@@ -33,11 +33,21 @@ TEST_CASE("Testing development of Distance class")
 
 
     }
-    SECTION("(Test 3) Operator overload '+' <obj> + <const>")
+    SECTION("(Test 4) Operator overload '+' <obj> + <const>")
     {
         Distance d1(3, 4.5);
         Distance d3;
         d3 = d1 + 5;
+        REQUIRE(d3.getFeet() == 8);
+        REQUIRE(d3.getInches() == Approx(4.5));
+
+    }
+    SECTION("(Test 5) Operator overload '+' <const> + <obj>")
+    {
+        Distance d1(3, 4.5);
+        Distance d3;
+
+        d3 = 5 + d1;
         REQUIRE(d3.getFeet() == 8);
         REQUIRE(d3.getInches() == Approx(4.5));
 

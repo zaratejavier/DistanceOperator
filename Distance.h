@@ -23,6 +23,7 @@ public:
     void setInches(float inches);
 
     Distance operator + (Distance d1 );
+
     Distance operator + (const int f);
 };
 Distance operator + (const int f, Distance d1);
